@@ -24,21 +24,19 @@
                 console.log('video init entered');
                 this.toggle = false;
                 this.vid = document.querySelector("#invitation");
-                // this.vid.pause();
+                this.vid.pause();
             },
-            // tick: function () {
-            //     if (this.el.object3D.visible == true) {
-            //         if (!this.toggle) {
-            //             alert('play');
-            //             this.toggle = true;
-            //             this.vid.play();
-            //         }
-            //     } else {
-            //         this.toggle = false;
-            //         this.vid.pause();
-            //         alert('pause');
-            //     }
-            // }
+            tick: function () {
+                if (this.el.object3D.visible == true) {
+                    if (!this.toggle) {
+                        this.toggle = true;
+                        this.vid.play();
+                    }
+                } else {
+                    this.toggle = false;
+                    this.vid.pause();
+                }
+            }
         });
 
         // Count down Timer and Countdown Timer Component
@@ -116,15 +114,10 @@
 
             <!-- Invitation  Video -->
 
-            <iframe id="invitation" width="1280" height="720" src="https://www.youtube.com/embed/W2IERghmzaI"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-
-            <!-- <video preload="none" id="invitation" response-type="arraybuffer" loop="true" crossorigin
-                webkit-playsinline playsinline controls>
+            <video preload="none" id="invitation" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline
+                playsinline controls>
                 <source src="videos/invitation.mp4">
-            </video> -->
+            </video>
 
             <!-- Map point Image -->
 
@@ -181,5 +174,11 @@
 
 
 </body>
+<script>
+    window.addEventListener('click', function () {
+        var v = document.querySelector('#invitation');
+        v.play();
+    });
+</script>
 
 </html>
