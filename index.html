@@ -30,6 +30,8 @@
                     if (!this.toggle) {
                         this.toggle = true;
                         this.vid.play();
+
+                        this.vid.muted = true;
                     }
                 } else {
                     this.toggle = false;
@@ -112,8 +114,8 @@
 
             <!-- Invitation  Video -->
 
-            <video autoplay="autoplay" muted spreload="none" id="invitation" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline
-                playsinline controls>
+            <video autoplay="autoplay" muted spreload="none" id="invitation" response-type="arraybuffer" loop="true"
+                crossorigin webkit-playsinline playsinline controls>
                 <source src="videos/invitation.mp4">
             </video>
 
