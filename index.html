@@ -24,7 +24,6 @@
                 console.log('video init entered');
                 this.toggle = false;
                 this.vid = document.querySelector("#invitation");
-                this.vid.pause();
             },
             tick: function () {
                 if (this.el.object3D.visible == true) {
@@ -34,7 +33,6 @@
                     }
                 } else {
                     this.toggle = false;
-                    this.vid.pause();
                 }
             }
         });
@@ -114,7 +112,7 @@
 
             <!-- Invitation  Video -->
 
-            <video preload="none" id="invitation" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline
+            <video autoplay="autoplay" muted spreload="none" id="invitation" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline
                 playsinline controls>
                 <source src="videos/invitation.mp4">
             </video>
